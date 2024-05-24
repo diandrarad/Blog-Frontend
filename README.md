@@ -1,72 +1,52 @@
-# Blog-Frontend
-Blog platform built with React.js
-# Getting Started with Create React App
+# Blog Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the front-end application for a blog platform built with React.js. It provides two main interfaces: one for the public to read and comment on blog posts, and another for authors to manage (create, edit, publish/unpublish) their posts.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- View all published blog posts
+- Comment on blog posts
+- Author interface to create, edit, publish/unpublish blog posts
+- Authentication using JWT tokens
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- Axios
+- React Router
+- Tailwind
+- localStorage (for storing JWT tokens)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+### Public Interface
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The public interface allows users to view all published blog posts and comment on them.
 
-### `npm run build`
+1. **View All Published Posts**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Navigate to the homepage (`/`) to see a list of all published posts.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Comment on a Post**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Click on a post to view its details and add a comment.
 
-### `npm run eject`
+### Author Interface
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The author interface allows authenticated users to create, edit, publish, and unpublish posts.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Login**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   Navigate to the login page (`/login`) and enter your credentials to log in.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Create a New Post**
 
-## Learn More
+   Navigate to the "Create New Post" page (`/new-post`) and fill out the form to create a new post.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Manage Posts**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   See a list of all your posts. You can edit, publish, or unpublish posts from this page.
 
-### Code Splitting
+## Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Authentication is handled using JWT tokens. The token is stored in `localStorage` upon login and is included in the headers of authenticated API requests.
