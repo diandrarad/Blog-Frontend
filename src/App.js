@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Profile from './components/Profile'
 import EditPost from './components/EditPost'
+import NewPost from './components/NewPost'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/posts/:id/edit" element={<EditPost />} />
+          <Route path="/new-post" element={<NewPost />} />
         </Routes>
       </BrowserRouter>
     </div>
