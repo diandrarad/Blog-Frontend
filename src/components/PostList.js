@@ -48,7 +48,15 @@ const PostList = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-8">Posts</h1>
+      <div class="flex justify-between items-center mb-8">
+        <h1 className="text-4xl font-bold">Posts</h1>
+        <Link
+          to={`/new-post`}
+          className="py-1 px-3 bg-sky-600 text-white rounded hover:bg-sky-500 transition duration-300"
+        >
+          <h1 className="text-2xl font-bold">Create a New Post</h1>
+        </Link>
+      </div>
       {posts.length > 0 ? (
         isAuthor && localStorage.getItem('token') ? (
           <table className="min-w-full bg-gray-800 text-white">
@@ -92,7 +100,7 @@ const PostList = () => {
                 className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition duration-300"
               >
                 <h2 className="text-2xl font-semibold mb-4">{post.title}</h2>
-                <p className="mb-4">{post.content}</p>
+                <p className="mb-4 truncate ...">{post.content}</p>
                 <Link
                   to={`/posts/${post._id}`}
                   className="inline-block mt-4 py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-500 transition duration-300"
